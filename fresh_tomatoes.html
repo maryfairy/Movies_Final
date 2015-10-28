@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fresh Tomatoes!</title>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        h2 { 
+          display: block;
+            font-size: 1.5em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;
+        }
+        h3 { 
+          display: block;
+            font-size: 1em;
+            margin-top: 0.67em;
+            margin-bottom: 0.67em;
+            margin-left: 0;
+            margin-right: 0;
+
+        }
+        
+        #trailer .modal-dialog {
+            margin-top: 100px;
+            width: 840px;
+            height: 480px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        #trailer-video {
+            width: 840px;
+            height: 480px;
+        }
+        .movie-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .movie-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+            display
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 50px;
+            position: absolute;
+            width: 50px;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Pause the video when the modal is closed
+        $(document).on('click', '.hanging-close, .modal-backdrop, .modal', function (event) {
+            // Remove the src so the player itself gets removed, as this is the only
+            // reliable way to ensure the video stops playing in IE
+            $("#trailer-video-container").empty();
+        });
+        // Start playing the video whenever the trailer modal is opened
+        $(document).on('click', '.movie-tile', function (event) {
+            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+            var sourceUrl = trailerYouTubeId;
+            $("#trailer-video-container").empty().append($("<iframe></iframe>", {
+              'id': 'trailer-video',
+              'type': 'text-html',
+              'src': sourceUrl,
+              'frameborder': 0
+            }));
+        });
+        // Animate in the movies when the page loads
+        $(document).ready(function () {
+          $('.movie-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+  <body>
+    <!-- Trailer Video Modal -->
+    <div class="modal" id="trailer">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <a href="#" class="hanging-close" data-dismiss="modal" aria-hidden="true">
+            <img src="https://lh5.ggpht.com/v4-628SilF0HtHuHdu5EzxD7WRqOrrTIDi_MhEG6_qkNtUK5Wg7KPkofp_VJoF7RS2LhxwEFCO1ICHZlc-o_=s0#w=24&h=24"/>
+          </a>
+          <div class="scale-media" id="trailer-video-container">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi3291132697/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTg5MDUwMDQwM15BMl5BanBnXkFtZTgwNTczMjU3NjE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+An American woman, well-versed in political campaigns, is sent to the war-torn lands of South America to help install a new leader but is threatened to be thwarted by a long-term rival.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Our Brand Is Crisis</h2>
+    <h3>Duration: 107 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi2060038937/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTY4NjczNjE4OV5BMl5BanBnXkFtZTgwODk0MjQ5NjE@._V1_UX140_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+Three scouts, on the eve of their last camp-out, discover the true meaning of friendship when they attempt to save their town from a zombie outbreak.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Scouts Guide to the Zombie Apocalypse</h2>
+    <h3>Duration: 93 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi676246297/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTk2MTMyMTEzN15BMl5BanBnXkFtZTgwNTE0MDYwNzE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+In the town of Dillford, humans, vampires and zombies were all living in peace - until the alien apocalypse arrived. Now three teenagers-one human, one vampire, and one zombie-have to team up to figure out how to get rid of the visitors.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Freaks of Nature</h2>
+    <h3>Duration: 135 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi709800729/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTQzNDUwODk5NF5BMl5BanBnXkFtZTgwNzA0MDQ2NTE@._V1_UY209_CR4,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+Murphy is an American living in Paris who enters a highly sexually and emotionally charged relationship with the unstable Electra. Unaware of the effect it will have on their relationship, they invite their pretty neighbor into their bed.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Love</h2>
+    <h3>Duration: 110 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi3777082137/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTk5NDk1OTk3Nl5BMl5BanBnXkFtZTgwODk3ODU3NjE@._V1_UY209_CR1,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+A family of beekeepers living in the Tuscan countryside finds their household disrupted by the simultaneous arrival of a silently troubled teenage boy and a reality TV show intent on showcasing the family.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Le meraviglie (2014)</h2>
+    <h3>Duration: 110 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi113423129/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTUyNDYzODkyNl5BMl5BanBnXkFtZTgwNTA5MjE1NjE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+During the 1980s Carter High School in Dallas, Texas was a football powerhouse. This is the story of four of the student athletes whose off the field activities cost them their future.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Carter High</h2>
+    <h3>Duration: 103 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi303870745/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMjA1OTUzNTQ5Ml5BMl5BanBnXkFtZTgwODQ4NDkxNjE@._V1_UX140_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+A teenager teams up with the daughter of young adult horror author R. L. Stine after the writer's imaginary demons are set free on the town of Madison, Delaware.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Goosebumps</h2>
+    <h3>Duration: 144 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi924626969/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTc2MTQ3MDA1Nl5BMl5BanBnXkFtZTgwODA3OTI4NjE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+During a manned mission to Mars, Astronaut Mark Watney is presumed dead after a fierce storm and left behind by his crew. But Watney has survived and finds himself stranded and alone on the hostile planet. With only meager supplies, he must draw upon his ingenuity, wit and spirit to subsist and find a way to signal to Earth that he is alive.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>The Martian</h2>
+    <h3>Duration: 141 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi805482521/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMjIxOTI0MjU5NV5BMl5BanBnXkFtZTgwNzM4OTk4NTE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+An American lawyer is recruited by the CIA during the Cold War to help rescue a pilot detained in the Soviet Union.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Bridge of Spies</h2>
+    <h3>Duration: 119 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi2812654361/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BNTY2OTI5MjAyOV5BMl5BanBnXkFtZTgwNTkzMjQ0NDE@._V1_UX140_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+In the aftermath of a family tragedy, an aspiring author is torn between love for her childhood friend and the temptation of a mysterious outsider. Trying to escape the ghosts of her past, she is swept away to a house that breathes, bleeds - and remembers.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Crimson Peak</h2>
+    <h3>Duration: 89 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi3908481817/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMjEzNzc4NzEyMV5BMl5BanBnXkFtZTgwMTAxMDQ2NTE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+Dracula and his friends try to bring out the monster in his half human, half vampire grandson in order to keep Mavis from leaving the hotel.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Hotel Transylvania 2</h2>
+    <h3>Duration: 111 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi252490521/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMzk2MDg5MDczMl5BMl5BanBnXkFtZTgwNTE2NjYyNjE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+12-year-old orphan Peter is spirited away to the magical world of Neverland, where he finds both fun and danger, and ultimately discovers his destiny -- to become the hero who will be forever known as Peter Pan.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Pan</h2>
+    <h3>Duration: 121 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi860271385/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMTUyNjE5NjI5OF5BMl5BanBnXkFtZTgwNzYzMzU3NjE@._V1_UY209_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+70-year-old widower Ben Whittaker has discovered that retirement isn't all it's cracked up to be. Seizing an opportunity to get back in the game, he becomes a senior intern at an online fashion site, founded and run by Jules Ostin.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>The Intern</h2>
+    <h3>Duration: 121 min</h3>
+</div>
+
+<div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="http://www.imdb.com//video/imdb/vi547074841/imdb/embed?autoplay=true" data-toggle="modal" data-target="#trailer">
+     <img src="http://ia.media-imdb.com/images/M/MV5BMjA5NjM3NTk1M15BMl5BanBnXkFtZTgwMzg1MzU2NjE@._V1_UX140_CR0,0,140,209_AL_.jpg" width="200" height="300"
+    <a class="texthover" href=" " title='
+An idealistic FBI agent is enlisted by an elected government task force to aid in the escalating war against drugs at the border area between the U.S. and Mexico.                    ' style="background-color:#FFFFFF;color:#000000;text-decoration:none">
+     </a>
+    <h2>Sicario</h2>
+    <h3>Duration: 123 min</h3>
+</div>
+
+    </div>
+  </body>
+</html>
